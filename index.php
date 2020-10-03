@@ -22,6 +22,7 @@
   <div class="form-group">
     <label for="exampleFormControlSelect1">Cantidad De Zapatos</label>
     <select class="form-control" id="numerodepares" name="numerodepares">
+      <option></option>
       <option>1</option>
       <option>2</option>
       <option>3</option>
@@ -49,24 +50,25 @@
     $numerodezapatos = $_POST['numerodepares'];
     $preciocompra = $_POST['preciototal'];
 
-  if($numerodezapatos == '3'){
+  if($numerodezapatos == 3 ){
 
     $preciodescuento = $preciocompra - ($preciocompra * 0.1);
     echo 'El Total Con Descuento ES: ' .$preciodescuento;
-
-  }elseif('3' > $numerodezapatos || $numerodezapatos <= '8'){
+    
+  }else if($numerodezapatos >= 4 && $numerodezapatos <= 8){
 
     $preciodescuento1 = $preciocompra - ($preciocompra * 0.2);
     echo 'El Total Con Descuento ES: ' .$preciodescuento1;
-
-  }elseif($numerodezapatos > '8'){
+    
+  }else if($numerodezapatos >= 9){
 
     $preciodescuentot = $preciocompra - ($preciocompra * 0.5);
     echo 'El Total Con Descuento ES: ' .$preciodescuentot;
 
   }else{
 
-      echo 'N0 Hay Descuento';
+    echo 'N0 Hay Descuento';
+
   }
 
     
